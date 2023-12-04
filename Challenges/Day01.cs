@@ -1,5 +1,4 @@
-﻿using System.Threading;
-using CodeAdvent2023.Shared;
+﻿using CodeAdvent2023.Shared;
 
 namespace CodeAdvent2023.Challenges;
 
@@ -13,7 +12,7 @@ public class Day01 : AdventDayBase, IAdventDay
         inputArray = input.Split("\n");
     }
 
-    public async Task SolveA()
+    public Task SolveA()
     {
         inputArray = [
             "1abc2",
@@ -74,9 +73,10 @@ public class Day01 : AdventDayBase, IAdventDay
         }
 
         Console.WriteLine($"Part A produces : {total}");
+        return Task.CompletedTask;
     }
 
-    public async Task SolveB()
+    public Task SolveB()
     {
         string[] ValidDigits = ["one", "two", "three", "four", "five", "six", "seven", "eight", "nine"];
         inputArray = [
@@ -98,18 +98,18 @@ public class Day01 : AdventDayBase, IAdventDay
 
             if (ValidDigits.Any(line.Contains))
             {
-                for(var i = 0; i< ValidDigits.Length; i++)
+                for (var i = 0; i < ValidDigits.Length; i++)
                 {
                     var indexOfFirstDigit = line.IndexOf(ValidDigits[i]);
                     var indexOfLastDigit = line.LastIndexOf(ValidDigits[i]);
 
-                    if(indexOfFirstDigit != -1)
+                    if (indexOfFirstDigit != -1)
                     {
-                        firstDigitsIndices.Add(indexOfFirstDigit, i + 1  );
+                        firstDigitsIndices.Add(indexOfFirstDigit, i + 1);
                     }
                     if (indexOfLastDigit != -1)
                     {
-                        lastDigitsIndices.Add(indexOfLastDigit,i + 1);
+                        lastDigitsIndices.Add(indexOfLastDigit, i + 1);
                     }
                 }
             }
@@ -125,11 +125,11 @@ public class Day01 : AdventDayBase, IAdventDay
             }
             else
             {
-                if(firstDigitIndex > -1)
+                if (firstDigitIndex > -1)
                 {
                     firstDigit = line[firstDigitIndex].ToString();
                 }
-                
+
             }
 
             var lastDigit = "";
@@ -141,24 +141,25 @@ public class Day01 : AdventDayBase, IAdventDay
             }
             else
             {
-                if( lastDigitIndex > -1)
+                if (lastDigitIndex > -1)
                 {
                     lastDigit = line[lastDigitIndex].ToString();
                 }
-                
+
             }
 
-            if(string.IsNullOrEmpty(firstDigit))
+            if (string.IsNullOrEmpty(firstDigit))
             {
                 continue;
             }
-            
+
             var number = int.Parse($"{firstDigit}{lastDigit}");
 
             total += number;
         }
 
         Console.WriteLine($"Part B produces : {total}");
+        return Task.CompletedTask;
 
     }
 }

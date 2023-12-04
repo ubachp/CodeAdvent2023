@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using CodeAdvent2023.Shared;
+﻿using CodeAdvent2023.Shared;
 
 namespace CodeAdvent2023.Challenges;
 public class Day04 : AdventDayBase, IAdventDay
@@ -15,14 +10,16 @@ public class Day04 : AdventDayBase, IAdventDay
         inputArray = input.Split("\n");
     }
 
-    public async Task SolveA()
+    public Task SolveA()
     {
-        throw new NotImplementedException();
+
+        return Task.CompletedTask;
 
     }
 
     public Task SolveB()
     {
-        throw new NotImplementedException();
+
+        return Task.CompletedTask;
     }
 }

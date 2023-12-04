@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using CodeAdvent2023.Shared;
+﻿using CodeAdvent2023.Shared;
 
 namespace CodeAdvent2023.Challenges;
 public class Day03 : AdventDayBase, IAdventDay
@@ -17,7 +11,7 @@ public class Day03 : AdventDayBase, IAdventDay
         inputArray = input.Split("\n");
     }
 
-    public async Task SolveA()
+    public Task SolveA()
     {
         inputArray = [
             "467..114..",
@@ -52,6 +46,8 @@ public class Day03 : AdventDayBase, IAdventDay
         }).Sum();
 
         Console.WriteLine($"Produces : {total}");
+
+        return Task.CompletedTask;
 
         //var matrix = inputArray.Select(x => x.ToCharArray()).ToArray();
 
@@ -154,7 +150,7 @@ public class Day03 : AdventDayBase, IAdventDay
 
     }
 
-    public async Task SolveB()
+    public Task SolveB()
     {
 
 
@@ -263,5 +259,7 @@ public class Day03 : AdventDayBase, IAdventDay
             }
         }
         Console.WriteLine($"Produces : {total}");
+
+        return Task.CompletedTask;
     }
 }
